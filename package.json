@@ -29,7 +29,8 @@
     "rewire": "^2.5.1",
     "sinon": "^1.17.3",
     "sinon-as-promised": "^4.0.0",
-    "sinon-chai": "^2.8.0"
+    "sinon-chai": "^2.8.0",
+    "xunit-file": "0.0.9"
   },
   "precommit": {
     "tasks": [

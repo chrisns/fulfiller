@@ -1,3 +1,10 @@
 language: node_js
 node_js:
   - "4.2.2"
+
+env:
+  - XUNIT_FILE=shippable/testresults/result.xml
+
+before_script:
+  - mkdir -p shippable/testresults
+  - mkdir -p shippable/codecoverage

@@ -1,3 +1,4 @@
 --ui bdd
 --timeout 5s
 --recursive
+--reporter xunit-file
