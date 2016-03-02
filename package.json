@@ -1,0 +1,33 @@
+{
+  "name": "fulfiller",
+  "description": "",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "pretest": "tsc",
+    "postinstall": "tsc",
+    "posttest": "tslint src/**/*.ts test/**/*.ts",
+    "test": "mocha",
+    "start": "ts-node src/app.ts"
+  },
+  "dependencies": {
+    "bluebird": "^3.3.3",
+    "lodash": "^4.6.1",
+    "sails-memory": "^0.10.6",
+    "ts-node": "^0.5.5",
+    "tsd": "^0.6.5",
+    "tslint": "^3.5.0",
+    "typescript": "^1.8.7"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.2.0",
+    "chai-things": "^0.2.0",
+    "freeport": "^1.0.5",
+    "mocha": "^2.4.5",
+    "rewire": "^2.5.1",
+    "sinon": "^1.17.3",
+    "sinon-as-promised": "^4.0.0",
+    "sinon-chai": "^2.8.0"
+  }
+}
