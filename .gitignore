@@ -1,4 +1,10 @@
 .idea
+tmp
 node_modules
 *.swp
 *.iml
+src/**/*.js
+src/**/*.js.map
+test/**/*.js
+test/**/*.js.map
+typings
