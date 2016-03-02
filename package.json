@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "pretest": "tsc",
-    "postinstall": "tsc",
+    "postinstall": "precommit install",
     "posttest": "tslint src/**/*.ts test/**/*.ts",
     "test": "mocha",
     "start": "ts-node src/app.ts"
@@ -25,9 +25,17 @@
     "chai-things": "^0.2.0",
     "freeport": "^1.0.5",
     "mocha": "^2.4.5",
+    "precommit": "^1.2.0",
     "rewire": "^2.5.1",
     "sinon": "^1.17.3",
     "sinon-as-promised": "^4.0.0",
     "sinon-chai": "^2.8.0"
+  },
+  "precommit": {
+    "tasks": [
+      "npm test"
+    ],
+    "onDirtyState": "ask",
+    "coloredOutput": true
   }
 }
