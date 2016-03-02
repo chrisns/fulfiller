@@ -1,9 +1,14 @@
 language: node_js
-node_js:
-  - "4.2.2"
 
 env:
   - XUNIT_FILE=shippable/testresults/result.xml
+
+ci:
+  - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+  - . ~/.nvm/nvm.sh
+  - nvm install 4.2.2
+
+
 
 before_script:
   - mkdir -p shippable/testresults
