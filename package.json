@@ -7,7 +7,7 @@
     "pretest": "tsc",
     "postinstall": "precommit install && tsd install",
     "posttest": "tslint src/**/*.ts test/**/*.ts",
-    "test": "mocha",
+    "test": "istanbul cover _mocha",
     "start": "ts-node src/app.ts"
   },
   "dependencies": {
@@ -24,6 +24,7 @@
     "chai-as-promised": "^5.2.0",
     "chai-things": "^0.2.0",
     "freeport": "^1.0.5",
+    "istanbul": "^0.4.2",
     "mocha": "^2.4.5",
     "precommit": "^1.2.0",
     "rewire": "^2.5.1",
