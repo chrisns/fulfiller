@@ -1,0 +1,8 @@
+node_modules
+typings
+tmp
+coverage
+shippable
+.npm
+.git
+.idea
