@@ -6,7 +6,9 @@
   "scripts": {
     "pretest": "tsc",
     "postinstall": "precommit install && typings install",
-    "posttest": "tslint src/**/*.ts test/**/*.ts",
+    "posttest": "npm run remapCoverage && npm run lint",
+    "remapCoverage": "remap-istanbul -i shippable/codecoverage/coverage.json -t cobertura -o shippable/codecoverage/cobertura-coverage.xml",
+    "lint": "tslint src/**/*.ts test/**/*.ts",
     "test": "istanbul cover _mocha",
     "prestart": "tsc",
     "start": "ts-node src/app.ts"
@@ -28,6 +30,7 @@
     "istanbul": "^0.4.2",
     "mocha": "^2.4.5",
     "precommit": "^1.2.0",
+    "remap-istanbul": "^0.5.1",
     "rewire": "^2.5.1",
     "sinon": "^1.17.3",
     "sinon-as-promised": "^4.0.0",
