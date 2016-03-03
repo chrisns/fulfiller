@@ -1,16 +1,30 @@
-language: node_js
+language: python
 
-env:
-  - XUNIT_FILE=shippable/testresults/result.xml
+#env:
+#  - XUNIT_FILE=shippable/testresults/result.xml
 
-before_install:
-  - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
-  - . ~/.nvm/nvm.sh
-  - nvm install 4.2.2
-  - node --version
+#before_install:
+#  - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+#  - . ~/.nvm/nvm.sh
+#  - nvm install 4.2.2
+#  - node --version
+build:
+  pre_ci:
+    - docker build -t fulfiller:latest
 
+  pre_ci_boot:
+      image_name: fulfiller
+      image_tag: latest
+      pull: false
+      env: FOO=BAR
+#    options: --privileged=true
 
+  ci:
+    - npm test
 
-before_script:
-  - mkdir -p shippable/testresults
-  - mkdir -p shippable/codecoverage
+#script:
+#  - docker run -it -v $SHIPPABLE_REPO_DIR/shippable:/home/app/shippable -e "" fulfiller npm test
+
+#before_script:
+#  - mkdir -p shippable/testresults
+#  - mkdir -p shippable/codecoverage
