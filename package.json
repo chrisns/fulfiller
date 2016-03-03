@@ -10,14 +10,12 @@
     "remapCoverage": "remap-istanbul -i shippable/codecoverage/coverage.json -t cobertura -o shippable/codecoverage/cobertura-coverage.xml",
     "lint": "tslint src/**/*.ts test/**/*.ts",
     "test": "istanbul cover _mocha",
-    "prestart": "tsc",
-    "start": "ts-node src/app.ts"
+    "start": "node src/app.js"
   },
   "dependencies": {
     "bluebird": "^3.3.3",
     "lodash": "^4.6.1",
     "sails-memory": "^0.10.6",
-    "ts-node": "^0.5.5",
     "tslint": "^3.5.0",
     "typescript": "^1.8.7",
     "typings": "^0.6.9"
