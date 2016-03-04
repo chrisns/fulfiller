@@ -9,6 +9,7 @@ dependencies:
 
 test:
   override:
-    - mkdir -p $CIRCLE_TEST_REPORTS/xunit
-    - docker run -v $CIRCLE_ARTIFACTS:/home/app/shippable fulfiller npm test
-    - cp $CIRCLE_ARTIFACTS/testresults/result.xml $CIRCLE_TEST_REPORTS/
+    - mkdir -p shippable
+    - mkdir -p ${CIRCLE_TEST_REPORTS}/xunit
+    - docker run -v shippable:/home/app/shippable fulfiller npm test
+    - cp shippable/testresults/result.xml ${CIRCLE_TEST_REPORTS}/xunit
