@@ -13,3 +13,4 @@ test:
     - mkdir -p ${CIRCLE_TEST_REPORTS}/xunit
     - docker run -v shippable:/home/app/shippable fulfiller npm test
     - cp shippable/testresults/result.xml ${CIRCLE_TEST_REPORTS}/xunit
+    - find .
