@@ -1,5 +1,5 @@
-language: python
-
+script:
+  - true
 #env:
 #  - XUNIT_FILE=shippable/testresults/result.xml
 
