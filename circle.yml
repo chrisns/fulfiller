@@ -14,4 +14,4 @@ test:
     - mkdir -p ${CIRCLE_TEST_REPORTS}/xunit
     - mkdir -p ${CIRCLE_ARTIFACTS}
     - docker run -v ${CIRCLE_ARTIFACTS}:/home/app/shippable -e "XUNIT_FILE=shippable/testresults/result.xml" fulfiller npm test
-    - cp shippable/testresults/result.xml ${CIRCLE_TEST_REPORTS}/xunit
+    - cp ${CIRCLE_ARTIFACTS}/testresults/result.xml ${CIRCLE_TEST_REPORTS}/xunit
