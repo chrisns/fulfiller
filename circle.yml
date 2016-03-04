@@ -3,6 +3,8 @@ machine:
     - docker
 
 dependencies:
+  cache_directories:
+    - "~/docker"
   override:
     - docker info
     - docker build -t fulfiller .
@@ -11,6 +13,8 @@ test:
   override:
     - mkdir -p shippable
     - mkdir -p ${CIRCLE_TEST_REPORTS}/xunit
-    - docker run -v shippable:/home/app/shippable fulfiller npm test
+    - mkdir -p ${CIRCLE_ARTIFACTS}
+    - docker run -v ${CIRCLE_ARTIFACTS}:/home/app/shippable fulfiller npm test
     - cp shippable/testresults/result.xml ${CIRCLE_TEST_REPORTS}/xunit
     - find .
+    - find ${CIRCLE_ARTIFACTS}
