@@ -1,19 +1,22 @@
 machine:
   services:
     - docker
+  environment:
+    dockerref: fulfilment/fulfiller:${CIRCLE_BRANCH}_${CIRCLE_BUILD_NUM}
+
 
 dependencies:
   cache_directories:
     - "~/.docker"
   override:
     - docker info
-    - docker build -t fulfilment/fulfiller:${CIRCLE_BRANCH}_${CIRCLE_BUILD_NUM} .
+    - docker build -t ${dockerref} .
 
 test:
   override:
     - mkdir -p ${CIRCLE_TEST_REPORTS}/xunit
     - mkdir -p ${CIRCLE_ARTIFACTS}
-    - docker run -v ${CIRCLE_ARTIFACTS}:/home/app/shippable -e "XUNIT_FILE=shippable/testresults/result.xml" fulfilment/fulfiller:${CIRCLE_BRANCH}_${CIRCLE_BUILD_NUM} npm test
+    - docker run -v ${CIRCLE_ARTIFACTS}:/home/app/shippable -e "XUNIT_FILE=shippable/testresults/result.xml" ${dockerref} npm test
     - cp ${CIRCLE_ARTIFACTS}/testresults/result.xml ${CIRCLE_TEST_REPORTS}/xunit
 
 deployment:
@@ -21,4 +24,4 @@ deployment:
     branch: master
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push fulfilment/fulfiller:${CIRCLE_BRANCH}_${CIRCLE_BUILD_NUM}
+      - docker push ${dockerref}
