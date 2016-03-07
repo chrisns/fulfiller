@@ -4,7 +4,6 @@ machine:
   environment:
     dockerref: fulfilment/fulfiller:${CIRCLE_BRANCH}_${CIRCLE_BUILD_NUM}
 
-
 dependencies:
   override:
     - docker info

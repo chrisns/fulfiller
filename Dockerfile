@@ -1,7 +1,7 @@
 FROM node:4.2.6-slim
 ENV NPM_CONFIG_LOGLEVEL warn
 
-WORKDIR / home/app
+WORKDIR /home/app
 
 ADD package.json typings.json ./
 
