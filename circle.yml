@@ -15,3 +15,10 @@ test:
     - mkdir -p ${CIRCLE_ARTIFACTS}
     - docker run -v ${CIRCLE_ARTIFACTS}:/home/app/shippable -e "XUNIT_FILE=shippable/testresults/result.xml" fulfiller npm test
     - cp ${CIRCLE_ARTIFACTS}/testresults/result.xml ${CIRCLE_TEST_REPORTS}/xunit
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push fulfilment/fulfiller:${CIRCLE_BRANCH}_${CIRCLE_BUILD_NUM}
