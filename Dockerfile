@@ -1,4 +1,5 @@
 FROM node:4.2.6-slim
+ENV NPM_CONFIG_LOGLEVEL warn
 
 RUN useradd -m --system app
 
