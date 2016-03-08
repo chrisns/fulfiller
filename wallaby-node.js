@@ -2,16 +2,16 @@ module.exports = function (w) {
 
   return {
     files: [
-      'knexfile.js',
+      'knexfile.ts',
       'src/**/*.ts',
-      'test/helpers/**/*.*',
-      'migrations/**/*.*'
+      'test/helpers/**/*.ts',
+      'migrations/**/*.ts'
     ],
     tests: [
       'test/**/*.ts',
       '!test/bootstrap.test.js',
       'test/**/*.json',
-      '!test/helpers/**/*.js'
+      '!test/helpers/sharedBootstrap.ts'
     ],
     env: {
       type: 'node'
