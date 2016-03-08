@@ -1,16 +1,24 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "allowUnreachableCode": false,
+    "diagnostics": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
     "module": "commonjs",
-    "noImplicitReturns": true,
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
-    "removeComments": true,
+    "noImplicitReturns": true,
     "preserveConstEnums": true,
-    "sourceMap": true
+    "pretty": true,
+    "removeComments": true,
+    "target": "es6"
   },
   "exclude": [
     "node_modules",
-    "typings/browser.d.ts",
-    "typings/browser"
+    "typings/browser",
+    "typings/browser.d.ts"
   ]
 }
