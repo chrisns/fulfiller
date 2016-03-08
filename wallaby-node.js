@@ -2,8 +2,10 @@ module.exports = function (w) {
 
   return {
     files: [
+      'knexfile.js',
       'src/**/*.ts',
-      'test/helpers/**/*.*'
+      'test/helpers/**/*.*',
+      'migrations/**/*.*'
     ],
     tests: [
       'test/**/*.js',
