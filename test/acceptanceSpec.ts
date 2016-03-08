@@ -1,6 +1,3 @@
-import Knex = require("knex");
-declare var knex:Knex;
-
 describe("the system", () => {
   it("should store a list of secrets");
   it("should store a list of valid reclaim codes");
@@ -20,8 +17,8 @@ describe("order processing", () => {
 });
 
 describe("basics", () => {
-  it("should start with the schema in place", () => {
-    return knex("reclaim").columnInfo().should.eventually.eql({
+  it("should start with the schema in place", () =>
+    global["knex"]("reclaim").columnInfo().should.eventually.eql({
       "code": {
         "defaultValue": null,
         "maxLength": "255",
@@ -34,6 +31,6 @@ describe("basics", () => {
         "nullable": false,
         "type": "integer"
       }
-    });
-  });
+    })
+  );
 });
