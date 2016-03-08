@@ -11,3 +11,7 @@ typings
 shippable
 coverage
 xunit.xml
+**.js.map
+acceptance/*.js
+migrations/*.js
+knexfile.js
