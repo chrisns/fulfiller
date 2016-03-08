@@ -5,7 +5,7 @@ let app = require("../src/app");
 
 describe("app exists", () => {
   it("should greet", () => {
-    chai.expect(app).to.not.be.undefined;
+    app.should.not.be.undefined
   });
 
   it("ra", () => {
@@ -33,6 +33,6 @@ describe("app exists", () => {
           .select()
       )
       .tap((users:Knex.Select):void => console.log(users))
-      .then((users:Knex.Select) => chai.expect(users).to.eql([{id: 1, name: "foo"}]));
+      .then((users:Knex.Select) => users.should.eql([{id: 1, name: "foo"}]));
   });
 });
