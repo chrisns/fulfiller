@@ -16,9 +16,9 @@ module.exports = function (w) {
     env: {
       type: 'node'
     },
-    compilers: {
-      '**/*.ts': w.compilers.typeScript({module: 'commonjs'})
-    },
+    //compilers: {
+    //  '**/*.ts': w.compilers.typeScript({module: 'commonjs'})
+    //},
     setup: wallaby => {
       "use strict";
       wallaby.delayStart();

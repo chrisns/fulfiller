@@ -1,4 +1,4 @@
-var bootstrap = require('./helpers/sharedBootstrap');
+var bootstrap = require("./helpers/sharedBootstrap");
 
 //before(bootstrap.before);
 beforeEach(bootstrap.beforeEach);

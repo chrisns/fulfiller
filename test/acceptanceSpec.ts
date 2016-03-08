@@ -16,21 +16,21 @@ describe("order processing", () => {
   it("should silently skip if it can't get a lock on the reclaim code");
 });
 
-describe("basics", () => {
-  it("should start with the schema in place", () =>
-    global["knex"]("reclaim").columnInfo().should.eventually.eql({
-      "code": {
-        "defaultValue": null,
-        "maxLength": "255",
-        "nullable": true,
-        "type": "varchar"
-      },
-      "id": {
-        "defaultValue": null,
-        "maxLength": null,
-        "nullable": false,
-        "type": "integer"
-      }
-    })
-  );
-});
+//describe("basics", () => {
+//  it("should start with the schema in place", () =>
+//    global["knex"]("reclaim").columnInfo().should.eventually.eql({
+//      "code": {
+//        "defaultValue": null,
+//        "maxLength": "255",
+//        "nullable": true,
+//        "type": "varchar"
+//      },
+//      "id": {
+//        "defaultValue": null,
+//        "maxLength": null,
+//        "nullable": false,
+//        "type": "integer"
+//      }
+//    })
+//  );
+//});

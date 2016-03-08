@@ -3,7 +3,9 @@
   "dependencies": {
     "bluebird": "github:typed-typings/npm-bluebird#524d5cc66654fe7c8dcbccf90faeaa70588853a0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "sinon": "github:typed-typings/npm-sinon#6cff4e3351276e85785f97cd55d810ebdf7e842e"
+  },
   "ambientDevDependencies": {
     "chai": "github:DefinitelyTyped/DefinitelyTyped/chai/chai.d.ts#1914a00b3c740348dae407ee0d2be89b0b58ad7f",
     "chai-as-promised": "github:DefinitelyTyped/DefinitelyTyped/chai-as-promised/chai-as-promised.d.ts#d6e3f732183ca0ee4c4b438323253b384f5b4091",

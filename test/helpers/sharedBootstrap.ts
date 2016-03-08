@@ -1,26 +1,37 @@
-global.rewire = require('rewire');
-global.freeport = require('freeport');
-global.chai = require('chai')
-  .use(require('chai-as-promised'))
-  .use(require('chai-things'))
-  .use(require('sinon-chai'))
-  .should();
-global.expect = chai.expect;
-global._ = require('lodash');
-global.sinon = require('sinon');
-require('sinon-as-promised')(require('bluebird'));
-global.Knex = require("knex");
-global.knexconfig = require("../../knexfile")[process.env.NODE_ENV || "development"];
+import * as chai from "chai";
+import * as Knex from "knex";
 
-module.exports = {
-  before: done => {
+const knexconfig = require("../../knexfile")[process.env.NODE_ENV || "development"];
+
+chai.use(require("chai-as-promised"))
+  .use(require("sinon-chai"))
+  .should();
+
+export interface Global {
+  expect:any;
+  knex:any;
+}
+// import sinon = require("sinon");
+// require("sinon-as-promised")(require("bluebird"));
+
+// global.expect = chai.expect;
+// global.sinon = sinon;
+// const Knex = require("knex");
+
+// global.Set('knex', 'ff');
+
+export var knex:Knex;
+
+export default {
+  afterEach: done => {
+    knex = Knex(knexconfig);
+    knex.migrate.rollback()
+      .then(() => done());
     done();
   },
-  //after: done => {
-  //  done();
-  //}
   beforeEach: done => {
-    global.knex = Knex(knexconfig);
-    knex.migrate.latest().then(() => done());
+    knex = Knex(knexconfig);
+    knex.migrate.latest()
+      .then(() => done());
   }
 };
