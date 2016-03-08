@@ -4,9 +4,9 @@ let app = require("../src/app");
 
 
 describe("app exists", () => {
-  it("should greet", () => {
+  it("should greet", () =>
     app.should.not.be.undefined
-  });
+  );
 
   it("ra", () => {
     let knex = Knex({
@@ -28,11 +28,7 @@ describe("app exists", () => {
         new User({name: "foo"})
       )
       .then((user:User) => user.save())
-      .then((user:User) =>
-        knex("users")
-          .select()
-      )
-      .tap((users:Knex.Select):void => console.log(users))
+      .then((user:User) => knex("users").select())
       .then((users:Knex.Select) => users.should.eql([{id: 1, name: "foo"}]));
   });
 });
