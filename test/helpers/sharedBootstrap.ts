@@ -23,13 +23,13 @@ export interface Global {
 export var knex:Knex;
 
 export default {
-  afterEach: done => {
+  afterEach: (done:any) => {
     knex = Knex(knexconfig);
     knex.migrate.rollback()
       .then(() => done());
     done();
   },
-  beforeEach: done => {
+  beforeEach: (done:any) => {
     knex = Knex(knexconfig);
     knex.migrate.latest()
       .then(() => done());
