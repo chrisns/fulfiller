@@ -26,13 +26,10 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "^5.2.0",
-    "chai-things": "^0.2.0",
-    "freeport": "^1.0.5",
     "istanbul": "^0.4.2",
     "mocha": "^2.4.5",
     "precommit": "^1.2.0",
     "remap-istanbul": "^0.5.1",
-    "rewire": "^2.5.1",
     "sinon": "^1.17.3",
     "sinon-as-promised": "^4.0.0",
     "sinon-chai": "^2.8.0",
