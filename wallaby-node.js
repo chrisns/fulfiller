@@ -25,8 +25,7 @@ module.exports = function (w) {
 
       let bootstrap = require('./test/helpers/sharedBootstrap');
 
-      //bootstrap.before(() => wallaby.start());
-      wallaby.start();
+      bootstrap.before(() => bootstrap.beforeEach(() => wallaby.start()));
     },
 
   }
