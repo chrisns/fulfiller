@@ -1,3 +1,6 @@
+import Knex = require("knex");
+declare var knex:Knex;
+
 describe("the system", () => {
   it("should store a list of secrets");
   it("should store a list of valid reclaim codes");

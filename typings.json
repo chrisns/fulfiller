@@ -6,12 +6,14 @@
   "devDependencies": {},
   "ambientDevDependencies": {
     "chai": "github:DefinitelyTyped/DefinitelyTyped/chai/chai.d.ts#1914a00b3c740348dae407ee0d2be89b0b58ad7f",
+    "chai-as-promised": "github:DefinitelyTyped/DefinitelyTyped/chai-as-promised/chai-as-promised.d.ts#d6e3f732183ca0ee4c4b438323253b384f5b4091",
     "mocha": "github:DefinitelyTyped/DefinitelyTyped/mocha/mocha.d.ts#d6dd320291705694ba8e1a79497a908e9f5e6617"
   },
   "ambientDependencies": {
     "bookshelf": "github:DefinitelyTyped/DefinitelyTyped/bookshelf/bookshelf.d.ts#808a31e15f9ff68696d66cb7e7ff78ed01b99486",
     "knex": "github:DefinitelyTyped/DefinitelyTyped/knex/knex.d.ts#2085793a2c7cbed962bda47c42565f2f4c9d7fda",
     "lodash": "github:DefinitelyTyped/DefinitelyTyped/lodash/lodash-3.10.d.ts#86dbea8fc37d9473fee465da4f0a21bea4f8cbd9",
-    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#48c1e3c1d6baefa4f1a126f188c27c4fefd36bff"
+    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#48c1e3c1d6baefa4f1a126f188c27c4fefd36bff",
+    "promises-a-plus": "github:DefinitelyTyped/DefinitelyTyped/promises-a-plus/promises-a-plus.d.ts#56068d3354648384ff32db20b6fcda4262856f33"
   }
 }
