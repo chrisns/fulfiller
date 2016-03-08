@@ -8,14 +8,16 @@ module.exports = function (w) {
       'migrations/**/*.*'
     ],
     tests: [
-      'test/**/*.js',
       'test/**/*.ts',
       '!test/bootstrap.test.js',
       'test/**/*.json',
-      '!test/helpers/**.js'
+      '!test/helpers/**/*.js'
     ],
     env: {
       type: 'node'
+    },
+    compilers: {
+      '**/*.ts': w.compilers.typeScript({module: 'commonjs'})
     },
     setup: wallaby => {
       "use strict";
@@ -23,8 +25,8 @@ module.exports = function (w) {
 
       let bootstrap = require('./test/helpers/sharedBootstrap');
 
-      bootstrap.before(() => wallaby.start());
-
+      //bootstrap.before(() => wallaby.start());
+      wallaby.start();
     },
 
   }

@@ -11,10 +11,10 @@ global.sinon = require('sinon');
 require('sinon-as-promised')(require('bluebird'));
 
 module.exports = {
-  before: done => {
-    done();
-  },
-  after: done => {
-    done();
-  }
+  //before: done => {
+  //  done();
+  //},
+  //after: done => {
+  //  done();
+  //}
 };
