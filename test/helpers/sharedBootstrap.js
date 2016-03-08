@@ -9,7 +9,7 @@ global.expect = chai.expect;
 global._ = require('lodash');
 global.sinon = require('sinon');
 require('sinon-as-promised')(require('bluebird'));
-global.Knex = require("Knex");
+global.Knex = require("knex");
 global.knexconfig = require("../../knexfile")[process.env.NODE_ENV || "development"];
 
 module.exports = {
