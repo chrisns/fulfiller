@@ -7,31 +7,18 @@ chai.use(require("chai-as-promised"))
   .use(require("sinon-chai"))
   .should();
 
-export interface Global {
-  expect:any;
-  knex:any;
-}
-// import sinon = require("sinon");
-// require("sinon-as-promised")(require("bluebird"));
-
-// global.expect = chai.expect;
-// global.sinon = sinon;
-// const Knex = require("knex");
-
-// global.Set('knex', 'ff');
-
-export var knex:Knex;
-
 export default {
   afterEach: (done:any) => {
-    knex = Knex(knexconfig);
-    knex.migrate.rollback()
+    global.knex = Knex(knexconfig);
+    global.knex.migrate.rollback()
       .then(() => done());
+  },
+  before: (done:any) => {
     done();
   },
   beforeEach: (done:any) => {
-    knex = Knex(knexconfig);
-    knex.migrate.latest()
+    global.knex = Knex(knexconfig);
+    global.knex.migrate.latest()
       .then(() => done());
   }
 };
