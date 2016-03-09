@@ -7,7 +7,7 @@ chai.use(require("chai-as-promised"))
   .use(require("sinon-chai"))
   .should();
 
-export default {
+module.exports = {
   afterEach: (done:any) => {
     global.knex = Knex(knexconfig);
     global.knex.migrate.rollback()
@@ -22,3 +22,18 @@ export default {
       .then(() => done());
   }
 };
+//export default {
+//  afterEach: (done:any) => {
+//    global.knex = Knex(knexconfig);
+//    global.knex.migrate.rollback()
+//      .then(() => done());
+//  },
+//  before: (done:any) => {
+//    done();
+//  },
+//  beforeEach: (done:any) => {
+//    global.knex = Knex(knexconfig);
+//    global.knex.migrate.latest()
+//      .then(() => done());
+//  }
+//};

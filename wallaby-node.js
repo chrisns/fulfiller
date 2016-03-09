@@ -11,22 +11,17 @@ module.exports = function (w) {
       'test/**/*.ts',
       '!test/bootstrap.test.js',
       'test/**/*.json',
-      '!test/helpers/sharedBootstrap.ts'
+      '!test/helpers/**'
     ],
     env: {
       type: 'node'
     },
-    //compilers: {
-    //  '**/*.ts': w.compilers.typeScript({module: 'commonjs'})
-    //},
     setup: wallaby => {
       "use strict";
       wallaby.delayStart();
-
+      //
       let bootstrap = require('./test/helpers/sharedBootstrap');
-
       bootstrap.before(() => bootstrap.beforeEach(() => wallaby.start()));
-    },
-
+    }
   }
 };
