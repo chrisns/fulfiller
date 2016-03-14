@@ -36,6 +36,9 @@
     "sqlite3": "^3.1.1",
     "xunit-file": "0.0.9"
   },
+  "engines": {
+    "node": ">=5.8.0"
+  },
   "precommit": {
     "tasks": [
       "npm test"

@@ -1,4 +1,4 @@
-FROM node:5.7.1-slim
+FROM node:5.8.0-slim
 ENV NPM_CONFIG_LOGLEVEL warn
 
 WORKDIR /home/app

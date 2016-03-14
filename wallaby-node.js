@@ -14,7 +14,8 @@ module.exports = function (w) {
       '!test/helpers/**'
     ],
     env: {
-      type: 'node'
+      type: 'node',
+      runner: process.env.STABLE_NODE
     },
     setup: wallaby => {
       "use strict";
