@@ -19,10 +19,12 @@ module.exports = function (w) {
     },
     setup: wallaby => {
       "use strict";
-      wallaby.delayStart();
-      //
       let bootstrap = require('./test/helpers/sharedBootstrap');
-      bootstrap.before(() => bootstrap.beforeEach(() => wallaby.start()));
+
+      wallaby.testFramework.suite.beforeEach(bootstrap.beforeEach);
+      wallaby.testFramework.suite.beforeAll(bootstrap.before);
+      wallaby.testFramework.suite.afterEach(bootstrap.afterEach);
+      wallaby.testFramework.suite.afterAll(bootstrap.after);
     }
   }
 };

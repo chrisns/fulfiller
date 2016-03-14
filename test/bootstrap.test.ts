@@ -1,6 +1,7 @@
 const bootstrap = require("./helpers/sharedBootstrap");
 
-//before(bootstrap.before);
+before(bootstrap.before);
 beforeEach(bootstrap.beforeEach);
 
-//after(bootstrap.after);
+after(bootstrap.after);
+afterEach(bootstrap.afterEach);

@@ -13,6 +13,9 @@ module.exports = {
     global.knex.migrate.rollback()
       .then(() => done());
   },
+  after: (done:any) => {
+    done();
+  },
   before: (done:any) => {
     done();
   },
@@ -22,18 +25,3 @@ module.exports = {
       .then(() => done());
   }
 };
-//export default {
-//  afterEach: (done:any) => {
-//    global.knex = Knex(knexconfig);
-//    global.knex.migrate.rollback()
-//      .then(() => done());
-//  },
-//  before: (done:any) => {
-//    done();
-//  },
-//  beforeEach: (done:any) => {
-//    global.knex = Knex(knexconfig);
-//    global.knex.migrate.latest()
-//      .then(() => done());
-//  }
-//};
