@@ -9,7 +9,6 @@ chai.use(require("chai-as-promised"))
 
 module.exports = {
   afterEach: (done:any) => {
-    global.knex = Knex(knexconfig);
     global.knex.migrate.rollback()
       .then(() => done());
   },

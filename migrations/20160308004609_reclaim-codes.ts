@@ -8,4 +8,4 @@ exports.up = (knex:Knex):Promise<void> =>
   });
 
 exports.down = (knex:Knex):Promise<void> =>
-  knex.schema.dropTable("users");
+  knex.schema.dropTable("reclaim");
