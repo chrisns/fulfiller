@@ -16,21 +16,26 @@ describe("order processing", () => {
   it("should silently skip if it can't get a lock on the reclaim code");
 });
 
-describe("basics", () => {
-  it("should start with the schema in place", () =>
-    global["knex"]("reclaim").columnInfo().should.eventually.eql({
-      "code": {
-        "defaultValue": null,
-        "maxLength": "255",
-        "nullable": true,
-        "type": "varchar"
-      },
-      "id": {
-        "defaultValue": null,
-        "maxLength": null,
-        "nullable": false,
-        "type": "integer"
-      }
-    })
-  );
-});
+
+/*
+
+ Given the order server has 0 unfulfilled valid orders
+ Then the service should sleep for 1 second
+
+ Given the order server has 1 unfulfilled valid orders
+ Then the service should fulfil 1 orders
+ And the service should reject 0 orders
+ And the service should sleep for 1 second
+
+ Given the order server has 2 unfulfilled valid orders
+ Then the service should fulfil 2 orders
+ And the service should reject 0 orders
+ And the service should sleep for 1s
+
+ Given the order server has 2 unfulfilled valid orders
+ And the order server has 1 unfulfilled invalid orders
+ Then the service should fulfil 2 orders
+ And the service should reject 1 orders
+
+
+ */
