@@ -21,12 +21,11 @@
     "sails-memory": "^0.10.6",
     "tslint": "^3.5.0",
     "typescript": "^1.8.7",
-    "typings": "^0.6.10"
+    "typings": "^0.7.9"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "^5.2.0",
-    "cucumber": "^0.9.5",
     "istanbul": "^0.4.2",
     "mocha": "^2.4.5",
     "precommit": "^1.2.0",
@@ -35,7 +34,9 @@
     "sinon-as-promised": "^4.0.0",
     "sinon-chai": "^2.8.0",
     "sqlite3": "^3.1.1",
-    "xunit-file": "0.0.9"
+    "ts-node": "^0.7.1",
+    "xunit-file": "0.0.9",
+    "yadda": "^0.17.4"
   },
   "engines": {
     "node": ">=5.8.0"
